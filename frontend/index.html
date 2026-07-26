@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stratega PM</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <meta name="theme-color" content="#1b6ef3" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Stratega PM</h1>
+    <div class="filters">
+      <select id="filterDept"><option value="">All Departments</option></select>
+      <select id="filterAssignee"><option value="">All Assignees</option></select>
+      <button id="btnNewTask">+ Task</button>
+    </div>
+  </header>
+
+  <main id="board" class="board"></main>
+
+  <!-- Comment drawer -->
+  <aside id="drawer" class="drawer hidden">
+    <button id="drawerClose">×</button>
+    <h2 id="drawerTitle"></h2>
+    <div id="commentList"></div>
+    <textarea id="commentInput" placeholder="Comment… use @name to tag"></textarea>
+    <button id="commentSend">Send</button>
+  </aside>
+
+  <script src="kanban.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js');
+  </script>
+</body>
+</html>
